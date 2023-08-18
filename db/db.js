@@ -161,8 +161,31 @@ export default {
   },
   experience: [
     {
+      title: "BYJU'S",
+      duration: "Jan 2023 - Present",
+      subtitle: "Member Of Technical Staff Intern",
+      details: [
+        "Implemented Batch Switch Alert for Users in Android App whose Batch Switch is about to happen.It helped decrease IRT calls/issues regarding the batch switch.",
+        "Revamped the test page by introducing a new design that consolidates all test listings into a single, user-friendly interface. Replaced the previous system, which necessitated separate pages for different test types.",
+        "Enhanced both functionality and design of the AakashByjus Website’s homepage exclusively for paid students. This resulted in increase in the number of Daily Active Users and significantly improved user interaction, due to the increased accessibility of valuable data on the homepage. Due to this the number of incoming IRT calls regarding classes, tests, and daily practice problems decreased."
+      ],
+      tags: ["Sagas", "Redux", "ReactJS", "Kotlin", "Jetpack Compose", "MVVM architecture"],
+      icon: "qrcode",
+    },
+    {
+      title: "BAIOAM",
+      duration: "June 2022 - July 2022",
+      subtitle: "Frontend Developer Intern",
+      details: [
+        "Working as a problem setter for the imocha platform",
+        "Created 11 data structure and algorithms problems till now",
+      ],
+      tags: ["JavaScript", "HTML", "CSS"],
+      icon: "heartbeat",
+    },
+    {
       title: "iMocha",
-      duration: "May 2022 - Present",
+      duration: "May 2022 - Dec 2022",
       subtitle: "Problem Setter",
       details: [
         "Working as a problem setter for the imocha platform",
