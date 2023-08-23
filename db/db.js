@@ -168,8 +168,10 @@ export default {
         "Implemented Batch Switch Alert for Users in Android App whose Batch Switch is about to happen.It helped decrease IRT calls/issues regarding the batch switch.",
         "Revamped the test page by introducing a new design that consolidates all test listings into a single, user-friendly interface. Replaced the previous system, which necessitated separate pages for different test types.",
         "Enhanced both functionality and design of the AakashByjus Website’s homepage exclusively for paid students. This resulted in increase in the number of Daily Active Users and significantly improved user interaction, due to the increased accessibility of valuable data on the homepage. Due to this the number of incoming IRT calls regarding classes, tests, and daily practice problems decreased."
+        "Worked on cost optimisation of WHJR by scaling down EC2 instances of stage WHJR during non-working hours by invoking lambda function through EventBridge and properly starting the service through CodeDeployment.",
+        "Worked on cost optimisation of Fivetran Usage by creating a service in Java which sends the mongoDB data to Snowflake DB through Amazon S3 bucket."
       ],
-      tags: ["Sagas", "Redux", "ReactJS", "Kotlin", "Jetpack Compose", "MVVM architecture"],
+      tags: ["Sagas", "Redux", "ReactJS", "Kotlin", "Jetpack Compose", "MVVM architecture", "Amazon Web Services (AWS)"],
       icon: "qrcode",
     },
     {
