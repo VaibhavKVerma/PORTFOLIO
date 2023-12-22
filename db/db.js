@@ -161,8 +161,20 @@ export default {
   },
   experience: [
     {
+      title: "BYJU’S - WhiteHatJr",
+      duration: "Oct 2023 - Present",
+      subtitle: "Member Of Technical Staff",
+      details: [
+        "CF Migration: Deprecated reliance on Cloudflare and Vercel for IP-based user country identification.Implemented an API-based solution to obtain user location, ensuring accuracy and flexibility in the process",
+        "Country-Specific Referral API: Developed a dedicated API for referring users based on country and specific courses.Successfully integrated the referral API into the UI, providing a tailored and efficient referral experience for targeted audiences.",
+        "Google SSO API and UI Integration: Developed a secure API for login using Google Single Sign-On (SSO) flow.Integrated the API seamlessly into the UI, enhancing user authentication with a streamlined and secure login process."
+      ],
+      tags: ["ReactJS", "NodeJs", "ExpressJs", "Sagas", "Redux", "MongoDB", "MySQL", "Amazon Web Services (AWS)"],
+      icon: "qrcode",
+    },
+    {
       title: "BYJU'S",
-      duration: "Jan 2023 - Present",
+      duration: "Jan 2023 - Sep 2023",
       subtitle: "Member Of Technical Staff Intern",
       details: [
         "Implemented Batch Switch Alert for Users in Android App whose Batch Switch is about to happen.It helped decrease IRT calls/issues regarding the batch switch.",
