@@ -93,8 +93,8 @@ const views = {
   projects: {
     kicker: "02  /  Work",
     html: `
-      <h2>Selected work</h2>
-      <p>Backend systems from GitHub — click a card to open the repo.</p>
+      <h2>Projects</h2>
+      <p>Backend systems — click a project to open the repository.</p>
       ${projects
         .map(
           (item) => `
@@ -139,16 +139,13 @@ const views = {
   skills: {
     kicker: "04  /  Skills",
     html: `
-      <h2>What I ship with</h2>
+      <h2>Technical skills</h2>
       ${skills
         .map(
           (skill) => `
         <div class="skill">
-          <div class="skill-row">
-            <strong>${escapeHtml(skill.title)}</strong>
-            <span>${escapeHtml(skill.name)}</span>
-          </div>
-          ${skill.value ? `<div class="bar"><i style="--w:${skill.value}%"></i></div>` : ""}
+          <p class="skill-title">${escapeHtml(skill.title)}</p>
+          ${tags(skill.name.split(",").map((item) => item.trim()).filter(Boolean))}
         </div>`
         )
         .join("")}

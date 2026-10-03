@@ -429,8 +429,9 @@ body.is-open .vignette {
 .sheet h2 {
   font-size: clamp(28px, 4vw, 40px);
   font-weight: 500;
-  letter-spacing: -0.04em;
-  line-height: 1.1;
+  letter-spacing: -0.02em;
+  word-spacing: 0.04em;
+  line-height: 1.15;
   margin-bottom: 0.7rem;
 }
 
@@ -545,20 +546,20 @@ body.is-open .vignette {
 }
 
 .skill {
-  padding: 0.75rem 0;
+  padding: 0.95rem 0;
   border-top: 1px solid var(--line);
 }
 
-.skill-row {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  font-size: 14px;
-  margin-bottom: 0.4rem;
+.skill-title {
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.92);
+  margin-bottom: 0.55rem;
 }
 
-.skill-row span {
-  color: var(--muted);
+.skill .tags {
+  margin-top: 0.1rem;
 }
 
 .bar {
