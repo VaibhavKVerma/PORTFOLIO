@@ -1,4 +1,3 @@
-import { createScene, PIN_DEFS } from "./scene.js";
 import {
   profile,
   skills,
@@ -7,7 +6,16 @@ import {
   education,
 } from "./data.js";
 
-const pages = ["home", ...PIN_DEFS.map((pin) => pin.id)];
+const sections = [
+  { id: "about", label: "About" },
+  { id: "projects", label: "Work" },
+  { id: "experience", label: "Experience" },
+  { id: "skills", label: "Skills" },
+  { id: "education", label: "Education" },
+  { id: "contact", label: "Contact" },
+];
+
+const pages = ["home", ...sections.map((item) => item.id)];
 const labels = {
   home: "Home",
   about: "About",
@@ -18,30 +26,47 @@ const labels = {
   contact: "Contact",
 };
 
+const stills = {
+  home: "images/vox-home.jpg",
+  about: "images/vox-home.jpg",
+  projects: "images/vox-work.jpg",
+  experience: "images/vox-experience.jpg",
+  skills: "images/vox-skills.jpg",
+  education: "images/vox-education.jpg",
+  contact: "images/vox-contact.jpg",
+};
+
 const hero = document.getElementById("hero");
 const sheet = document.getElementById("sheet");
 const sheetBody = document.getElementById("sheet-body");
 const sheetKicker = document.getElementById("sheet-kicker");
-const pinsEl = document.getElementById("pins");
 const dock = document.getElementById("dock");
 const hint = document.getElementById("hint");
 const step = document.getElementById("step");
-const fallback = document.getElementById("fallback");
 const burger = document.getElementById("nav-burger");
 const mobileMenu = document.getElementById("mobile-menu");
+const stageA = document.getElementById("stage-a");
+const stageB = document.getElementById("stage-b");
 
-let sceneApi = {
-  lookAt() {},
-  setOpen() {},
-  getPins: () => [],
-};
-let hasWebgl = true;
+Object.values(stills).forEach((src) => {
+  const img = new Image();
+  img.src = src;
+});
 
-try {
-  sceneApi = createScene(document.getElementById("webgl"));
-} catch (error) {
-  hasWebgl = false;
-  console.warn("WebGL unavailable", error);
+let front = stageA;
+let back = stageB;
+let currentStill = stills.home;
+
+function setStill(id) {
+  const src = stills[id] || stills.home;
+  if (src === currentStill) return;
+  currentStill = src;
+  back.src = src;
+  back.classList.add("is-on");
+  front.classList.remove("is-on");
+  const swap = front;
+  front = back;
+  back = swap;
 }
 
 function escapeHtml(value) {
@@ -170,18 +195,7 @@ const views = {
   },
 };
 
-const pinNodes = PIN_DEFS.map((def) => {
-  const button = document.createElement("button");
-  button.type = "button";
-  button.className = "pin";
-  button.dataset.to = def.id;
-  button.innerHTML = `<i></i><span>${escapeHtml(def.label)}</span>`;
-  button.addEventListener("click", () => goTo(def.id));
-  pinsEl.append(button);
-  return button;
-});
-
-PIN_DEFS.forEach((def) => {
+sections.forEach((def) => {
   const button = document.createElement("button");
   button.type = "button";
   button.dataset.to = def.id;
@@ -189,21 +203,6 @@ PIN_DEFS.forEach((def) => {
   button.addEventListener("click", () => goTo(def.id));
   dock.append(button);
 });
-
-if (!hasWebgl) {
-  document.body.classList.add("no-webgl");
-  fallback.hidden = false;
-  fallback.innerHTML = `
-    <header class="fallback-hero">
-      <img src="${profile.photo}" alt="" />
-      <h1>${escapeHtml(profile.name)}</h1>
-      <p>${escapeHtml(profile.role)} · ${escapeHtml(profile.company)}</p>
-    </header>
-    ${Object.values(views)
-      .map((view) => `<section>${view.html}</section>`)
-      .join("")}
-  `;
-}
 
 let current = "";
 let locked = false;
@@ -228,15 +227,11 @@ function showPage(id) {
   const isHome = id === "home";
   hero.classList.toggle("is-dim", !isHome);
   document.body.classList.toggle("is-open", !isHome);
-  sceneApi.setOpen(!isHome);
-  sceneApi.lookAt(isHome ? "" : id);
+  setStill(id);
   step.textContent = labels[id] || id;
 
   document.querySelectorAll("[data-to]").forEach((link) => {
     link.classList.toggle("is-active", link.getAttribute("data-to") === id);
-  });
-  pinNodes.forEach((pin) => {
-    pin.classList.toggle("is-active", pin.dataset.to === id);
   });
 
   if (isHome) {
@@ -252,38 +247,6 @@ function showPage(id) {
   sheetBody.scrollTop = 0;
   sheet.classList.add("is-open");
   sheet.setAttribute("aria-hidden", "false");
-}
-
-function hits(x, y, rect, pad = 20) {
-  return x > rect.left - pad && x < rect.right + pad && y > rect.top - pad && y < rect.bottom + pad;
-}
-
-function placePins() {
-  if (!hasWebgl || window.innerWidth < 768) {
-    pinNodes.forEach((node) => {
-      node.style.opacity = "0";
-      node.style.pointerEvents = "none";
-    });
-    return;
-  }
-  const heroBox = hero.getBoundingClientRect();
-  const navBox = document.querySelector(".nav").getBoundingClientRect();
-  const sheetBox = sheet.getBoundingClientRect();
-  const sheetOpen = sheet.classList.contains("is-open");
-
-  sceneApi.getPins().forEach((pin, i) => {
-    const node = pinNodes[i];
-    if (!node) return;
-    const blocked =
-      hits(pin.x, pin.y, heroBox) ||
-      hits(pin.x, pin.y, navBox) ||
-      (sheetOpen && hits(pin.x, pin.y, sheetBox, 8));
-    node.style.left = `${pin.x}px`;
-    node.style.top = `${pin.y}px`;
-    const visible = pin.on && !blocked;
-    node.style.opacity = visible ? String(0.4 + Math.max(0, pin.facing) * 0.6) : "0";
-    node.style.pointerEvents = visible ? "auto" : "none";
-  });
 }
 
 function stepPage(dir) {
@@ -313,7 +276,6 @@ function sheetOwnsWheel(event) {
 window.addEventListener(
   "wheel",
   (event) => {
-    if (document.body.classList.contains("no-webgl")) return;
     if (sheetOwnsWheel(event)) return;
     event.preventDefault();
     acc += event.deltaY;
@@ -343,11 +305,6 @@ window.addEventListener(
   },
   { passive: true }
 );
-
-function tick() {
-  placePins();
-  requestAnimationFrame(tick);
-}
 
 function closeMobile() {
   burger.classList.remove("is-open");
@@ -385,4 +342,3 @@ window.addEventListener("keydown", (event) => {
 
 const startId = window.location.hash.replace("#", "") || "home";
 goTo(startId === "intro" ? "about" : startId, true);
-if (hasWebgl) tick();

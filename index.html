@@ -17,17 +17,14 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/app.css" />
-    <script type="importmap">
-      {
-        "imports": {
-          "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
-          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
-        }
-      }
-    </script>
+    <link rel="preload" as="image" href="images/vox-home.jpg" />
+    <link rel="preload" as="image" href="images/vox-work.jpg" />
   </head>
   <body>
-    <canvas id="webgl" aria-hidden="true"></canvas>
+    <div class="stage" id="stage" aria-hidden="true">
+      <img class="stage-img is-on" id="stage-a" src="images/vox-home.jpg" alt="" />
+      <img class="stage-img" id="stage-b" src="images/vox-home.jpg" alt="" />
+    </div>
     <div class="vignette" aria-hidden="true"></div>
     <div class="grain" aria-hidden="true"></div>
 
@@ -70,8 +67,6 @@
       <a href="#contact" data-to="contact" class="mobile-cta">Get in touch</a>
     </div>
 
-    <div id="pins" class="pins" aria-hidden="false"></div>
-
     <main class="hero" id="hero">
       <img class="hero-photo" src="images/portrait.jpg" alt="Vaibhav Verma" />
       <div>
@@ -103,7 +98,7 @@
 
     <nav class="dock" id="dock" aria-label="Sections"></nav>
     <p class="step" id="step">Home</p>
-    <p class="hint" id="hint">Scroll to move · click a point on the globe</p>
+    <p class="hint" id="hint">Scroll to move</p>
 
     <div id="fallback" class="fallback" hidden></div>
 
