@@ -1,249 +1,112 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Vaibhav Kumar Verma</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Vaibhav Verma</title>
     <meta
       name="description"
-      content="Portfolio webpage of Vaibhav Kumar Verma"
+      content="Vaibhav Verma — software engineer. Work, experience, and contact."
     />
-    <meta
-      name="keywords"
-      content="portfolio,website,personal website,github,projects,computer science and engineering"
-    />
-    <meta name="author" content="Vaibhav Kumar Verma" />
-    <!--------------------Social Media icons------------------------>
+    <meta name="author" content="Vaibhav Verma" />
+    <link rel="icon" type="image/jpeg" href="images/portrait.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <link rel="icon" type="image/jpg" href="/images/logo.jpg" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700"
+      href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap"
       rel="stylesheet"
     />
-    <link
-      href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Raleway&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Animate.css -->
-    <link rel="stylesheet" href="css/animate.css" />
-    <!-- Bootstrap  -->
-    <link rel="stylesheet" href="css/bootstrap.css" />
-    <!-- Theme style  -->
-    <link rel="stylesheet" href="css/style.css" />
-    <!-- Modernizr JS -->
-    <script src="js/modernizr-2.6.2.min.js"></script>
-    <script type="module" src="js/populateHTML.js"></script>
+    <link rel="stylesheet" href="css/app.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+        }
+      }
+    </script>
   </head>
-
   <body>
-    <div id="colorlib-page">
-      <div class="container-wrap">
-        <a
-          href="#"
-          class="js-colorlib-nav-toggle colorlib-nav-toggle"
-          data-toggle="collapse"
-          data-target="#navbar"
-          aria-expanded="false"
-          aria-controls="navbar"
-          ><i></i
-        ></a>
-        <!--------------------[START] Side Bar-------------------------->
-        <aside
-          id="colorlib-aside"
-          role="complementary"
-          class="border js-fullheight no-print"
-        >
-          <div class="text-center">
-            <div class="author-img">
-              <img src="images/logo.jpg" />
-            </div>
-            <h1 id="colorlib-logo">
-              <a href="./index.html">Vaibhav Kumar Verma</a>
-            </h1>
-          </div>
-          <nav
-            id="colorlib-main-menu"
-            role="navigation"
-            class="navbar"
-            style="padding-top: 2em"
-          >
-            <div id="navbar" class="collapse">
-              <ul>
-                <li><a href="#" data-nav-section="about">About</a></li>
-                <li><a href="#" data-nav-section="skills">Skills</a></li>
-                <li><a href="#" data-nav-section="projects">Projects</a></li>
-                <li>
-                  <a href="#" data-nav-section="experience">Work Experience</a>
-                </li>
-                <li><a href="#" data-nav-section="education">Education</a></li>
-                <li><a href="#" data-nav-section="contact">Contact</a></li>
-              </ul>
-            </div>
-          </nav>
-        </aside>
-        <!--------------------[END] Side Bar---------------------------->
-        <!--------------------[START] Main Page------------------------->
-        <div id="colorlib-main">
-          <!--------------------[START] About me-------------------------->
-          <section class="colorlib-about" data-section="about">
-            <div class="colorlib-narrow-content">
-              <div class="row animate-box" data-animate-effect="fadeInLeft">
-                <div class="about-desc">
-                  <h1>About</h1>
-                  <p>
-                    Hi &#128075; <br />I'm Vaibhav Kumar Verma. I am B.Tech
-                    graduate in Electrical Engineering from
-                    <b>NIT Jalandhar</b>.
-                  </p>
-                  <p>
-                    I am Ingenious Software Developer with good knowledge of Data Structures and Algorithms in C++ and hands on experience with Web Development in NodeJs,ReactJS,Redux,JavaScript. Delve to expedite my coding skills and gain exposure to new tools by getting experience in the IT industry as a Software Engineer.
-                  </p>
-                  <p class="finalText">
-                    I love to listen to music and binge shows.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
-          <!--------------------[END] About me---------------------------->
-          <!--------------------[START] Skills---------------------------->
-          <section class="colorlib-skills" data-section="skills">
-            <div class="colorlib-narrow-content">
-              <div
-                class="row row-bottom-padded-sm animate-box"
-                data-animate-effect="fadeInLeft"
-              >
-                <div class="about-desc">
-                  <h1>Skills</h1>
-                </div>
-              </div>
-              <div id="skills" class="row"></div>
-            </div>
-          </section>
-          <!--------------------[END] Skills------------------------------>
-          <!--------------------[START] Projects-------------------------->
-          <section class="colorlib-projects no-print" data-section="projects">
-            <div class="colorlib-narrow-content">
-              <div
-                class="row row-bottom-padded-sm animate-box"
-                data-animate-effect="fadeInLeft"
-              >
-                <div class="about-desc">
-                  <h1>Projects</h1>
-                </div>
-              </div>
-              <ul
-                id="accordion"
-                class="accordion animate-box"
-                data-animate-effect="fadeInLeft"
-              >
-                <li>
-                  <div class="link">
-                    <p style="margin-bottom: 0px">Javascript Projects</p>
-                    <i class="fa fa-chevron-down"></i>
-                  </div>
-                  <ul id="web-projects" class="submenu"></ul>
-                </li>
-                <li>
-                  <div class="link">
-                    <p style="margin-bottom: 0px">Node Projects</p>
-                    <i class="fa fa-chevron-down"></i>
-                  </div>
-                  <ul id="software-projects" class="submenu"></ul>
-                </li>
-                <li>
-                  <div class="link">
-                    <p style="margin-bottom: 0px">React Projects</p>
-                    <i class="fa fa-chevron-down"></i>
-                  </div>
-                  <ul id="android-projects" class="submenu"></ul>
-                </li>
-              </ul>
-            </div>
-          </section>
-          <!--------------------[END] Projects---------------------------->
-          <!--------------------[START] Work Experience------------------->
-          <section class="colorlib-experience" data-section="experience">
-            <div class="colorlib-narrow-content">
-              <div
-                class="row row-bottom-padded-sm animate-box fadeInLeft animated"
-                data-animate-effect="fadeInLeft"
-              >
-                <div class="about-desc">
-                  <h1>Work <span style="color: #f9bf3f">Experience</span></h1>
-                </div>
-              </div>
-              <div class="timeline-centered" id="experience"></div>
-            </div>
-          </section>
-          <!--------------------[END] Work Experience--------------------->
-          <!--------------------[START] Education------------------------->
-          <section class="colorlib-education" data-section="education">
-            <div class="colorlib-narrow-content">
-              <div
-                class="row row-bottom-padded-sm animate-box fadeInLeft animated"
-                data-animate-effect="fadeInLeft"
-              >
-                <div class="about-desc">
-                  <h1>Education</h1>
-                </div>
-              </div>
-              <div class="timeline-centered" id="education"></div>
-            </div>
-          </section>
-          <!--------------------[END] Education--------------------------->
-          <!--------------------[START] Contact--------------------------->
-          <section class="colorlib-contact" data-section="contact">
-            <div class="colorlib-narrow-content">
-              <div
-                class="row row-bottom-padded-sm animate-box"
-                data-animate-effect="fadeInLeft"
-              >
-                <div class="about-desc">
-                  <h1>Contact</h1>
-                </div>
-                <p>
-                  If you would like to get in touch with me, be it for exploring
-                  a technology, a business, or to just say hi, feel free to send
-                  me an email at vaibhavverma15062001@gmail.com.
-                </p>
-              </div>
-            </div>
-          </section>
-          <!--------------------[END] Contact----------------------------->
-          <!--------------------[START] Footer---------------------------->
-          <section class="colorlib-footer no-print" data-section="footer">
-            <div class="colorlib-narrow-content">
-              <footer class="footer" id="footer"></footer>
-            </div>
-          </section>
-          <!--------------------[END] Footer------------------------------>
-        </div>
-        <!-----[END] Main Page--------->
-      </div>
+    <canvas id="webgl" aria-hidden="true"></canvas>
+    <div class="vignette" aria-hidden="true"></div>
+    <div class="grain" aria-hidden="true"></div>
+
+    <header class="nav">
+      <a class="nav-logo" href="#home" data-to="home">
+        <span class="nav-mark">Vaibhav</span>
+        <span class="nav-asterisk" aria-hidden="true">✳︎</span>
+      </a>
+      <nav class="nav-links" aria-label="Main">
+        <a href="#about" data-to="about">About</a>
+        <span class="nav-comma">,</span>
+        <a href="#projects" data-to="projects">Work</a>
+        <span class="nav-comma">,</span>
+        <a href="#experience" data-to="experience">Experience</a>
+        <span class="nav-comma">,</span>
+        <a href="#skills" data-to="skills">Skills</a>
+        <span class="nav-comma">,</span>
+        <a href="#education" data-to="education">Education</a>
+      </nav>
+      <a class="nav-cta" href="#contact" data-to="contact">Get in touch</a>
+      <button
+        class="nav-burger"
+        id="nav-burger"
+        type="button"
+        aria-label="Open menu"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </header>
+
+    <div class="mobile-menu" id="mobile-menu" hidden>
+      <a href="#about" data-to="about">About</a>
+      <a href="#projects" data-to="projects">Work</a>
+      <a href="#experience" data-to="experience">Experience</a>
+      <a href="#skills" data-to="skills">Skills</a>
+      <a href="#education" data-to="education">Education</a>
+      <a href="#contact" data-to="contact" class="mobile-cta">Get in touch</a>
     </div>
-    <!-- jQuery -->
-    <script src="js/jquery.min.js"></script>
-    <!-- jQuery Easing -->
-    <script src="js/jquery.easing.1.3.js"></script>
-    <!-- Bootstrap -->
-    <script src="js/bootstrap.min.js"></script>
-    <!-- Waypoints -->
-    <script src="js/jquery.waypoints.min.js"></script>
-    <!-- Flexslider -->
-    <script src="js/jquery.flexslider-min.js"></script>
-    <!-- Counters -->
-    <script src="js/jquery.countTo.js"></script>
-    <!-- MAIN JS -->
-    <script src="js/main.js"></script>
+
+    <div id="pins" class="pins" aria-hidden="false"></div>
+
+    <main class="hero" id="hero">
+      <img class="hero-photo" src="images/portrait.jpg" alt="Vaibhav Verma" />
+      <div>
+        <p class="hero-kicker">Software Developer 2 · Birla Pivot</p>
+        <h1>Vaibhav Verma</h1>
+        <p class="hero-lede">
+          Backend engineer. Payments, leads, and media pipelines — Java, Spring
+          Boot, Node, Kafka. NIT Jalandhar.
+        </p>
+        <div class="hero-actions">
+          <button type="button" class="btn" data-to="experience">Experience</button>
+          <button type="button" class="btn" data-to="projects">Selected work</button>
+          <a class="btn btn-ghost" href="mailto:vaibhavverma15062001@gmail.com">Email me</a>
+        </div>
+        <p class="hero-links">
+          <a href="https://www.linkedin.com/in/vaibhav-kr-verma/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="https://github.com/VaibhavKVerma" target="_blank" rel="noreferrer">GitHub</a>
+        </p>
+      </div>
+    </main>
+
+    <article class="sheet" id="sheet" aria-hidden="true">
+      <div class="sheet-bar">
+        <p class="sheet-kicker" id="sheet-kicker"></p>
+        <button type="button" class="sheet-close" id="sheet-close">Close</button>
+      </div>
+      <div class="sheet-body" id="sheet-body"></div>
+    </article>
+
+    <nav class="dock" id="dock" aria-label="Sections"></nav>
+    <p class="step" id="step">Home</p>
+    <p class="hint" id="hint">Scroll to move · click a point on the globe</p>
+
+    <div id="fallback" class="fallback" hidden></div>
+
+    <script type="module" src="js/app.js"></script>
   </body>
 </html>
