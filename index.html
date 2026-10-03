@@ -19,11 +19,19 @@
     <link rel="stylesheet" href="css/app.css" />
     <link rel="preload" as="image" href="images/vox-home.jpg" />
     <link rel="preload" as="image" href="images/vox-work.jpg" />
+    <link rel="preload" as="image" href="images/vox-experience.jpg" />
+    <link rel="preload" as="image" href="images/vox-skills.jpg" />
+    <link rel="preload" as="image" href="images/vox-education.jpg" />
+    <link rel="preload" as="image" href="images/vox-contact.jpg" />
   </head>
   <body>
     <div class="stage" id="stage" aria-hidden="true">
-      <img class="stage-img is-on" id="stage-a" src="images/vox-home.jpg" alt="" />
-      <img class="stage-img" id="stage-b" src="images/vox-home.jpg" alt="" />
+      <img class="stage-img is-on" data-still="home" src="images/vox-home.jpg" alt="" width="1920" height="1080" decoding="sync" />
+      <img class="stage-img" data-still="projects" src="images/vox-work.jpg" alt="" width="1920" height="1080" decoding="async" />
+      <img class="stage-img" data-still="experience" src="images/vox-experience.jpg" alt="" width="1920" height="1080" decoding="async" />
+      <img class="stage-img" data-still="skills" src="images/vox-skills.jpg" alt="" width="1920" height="1080" decoding="async" />
+      <img class="stage-img" data-still="education" src="images/vox-education.jpg" alt="" width="1920" height="1080" decoding="async" />
+      <img class="stage-img" data-still="contact" src="images/vox-contact.jpg" alt="" width="1920" height="1080" decoding="async" />
     </div>
     <div class="vignette" aria-hidden="true"></div>
     <div class="grain" aria-hidden="true"></div>

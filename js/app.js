@@ -26,14 +26,14 @@ const labels = {
   contact: "Contact",
 };
 
-const stills = {
-  home: "images/vox-home.jpg",
-  about: "images/vox-home.jpg",
-  projects: "images/vox-work.jpg",
-  experience: "images/vox-experience.jpg",
-  skills: "images/vox-skills.jpg",
-  education: "images/vox-education.jpg",
-  contact: "images/vox-contact.jpg",
+const stillFor = {
+  home: "home",
+  about: "home",
+  projects: "projects",
+  experience: "experience",
+  skills: "skills",
+  education: "education",
+  contact: "contact",
 };
 
 const hero = document.getElementById("hero");
@@ -45,28 +45,21 @@ const hint = document.getElementById("hint");
 const step = document.getElementById("step");
 const burger = document.getElementById("nav-burger");
 const mobileMenu = document.getElementById("mobile-menu");
-const stageA = document.getElementById("stage-a");
-const stageB = document.getElementById("stage-b");
+const stageImgs = [...document.querySelectorAll(".stage-img")];
 
-Object.values(stills).forEach((src) => {
-  const img = new Image();
-  img.src = src;
+stageImgs.forEach((img) => {
+  if (img.decode) img.decode().catch(() => {});
 });
 
-let front = stageA;
-let back = stageB;
-let currentStill = stills.home;
+let currentStill = stillFor.home;
 
 function setStill(id) {
-  const src = stills[id] || stills.home;
-  if (src === currentStill) return;
-  currentStill = src;
-  back.src = src;
-  back.classList.add("is-on");
-  front.classList.remove("is-on");
-  const swap = front;
-  front = back;
-  back = swap;
+  const key = stillFor[id] || "home";
+  if (key === currentStill) return;
+  currentStill = key;
+  stageImgs.forEach((img) => {
+    img.classList.toggle("is-on", img.dataset.still === key);
+  });
 }
 
 function escapeHtml(value) {
@@ -259,7 +252,7 @@ function stepPage(dir) {
   window.setTimeout(() => {
     locked = false;
     acc = 0;
-  }, 720);
+  }, 420);
 }
 
 function sheetOwnsWheel(event) {
